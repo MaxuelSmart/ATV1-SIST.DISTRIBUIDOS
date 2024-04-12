@@ -1,7 +1,7 @@
 import sgbd from '../sgbd.js'
 
-const route = "/frutas"
-const entity = "frutas"
+const route = "/filmes"
+const entity = "filmes"
 
 function filmes(app) {
 
@@ -20,7 +20,7 @@ function filmes(app) {
         console.log('conteúdo do body:', req.body);
         sgbd.db[entity][req.body.fruta] = req.body.fruta
         sgbd.write()
-        res.json(sgbd.db[entity][req.body.fruta])
+        res.json(sgbd.db[entity][req.body.filme])
     })
 
     app.put(route+"/:id", function (req, res) {
